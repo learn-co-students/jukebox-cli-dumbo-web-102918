@@ -38,7 +38,7 @@ def play(my_songs)
   puts "Please enter a song name or number: "
   music = gets.chomp
   
-  my_songs.each do |song, idx|
+  # my_songs.each do |song, idx|
     if (1..9).to_a.include?(music.to_i)    
       puts "Playing #{my_songs[music.to_i - 1]}" 
     elsif my_songs.include?(music)   
@@ -46,7 +46,7 @@ def play(my_songs)
     else
       puts "Invalid input, please try again"
     end
-  end
+  # end
 
 end
 
