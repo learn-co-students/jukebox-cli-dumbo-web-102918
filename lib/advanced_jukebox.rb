@@ -39,12 +39,13 @@ def play(my_songs)
   music = gets.chomp
   
   my_songs.each do |song, idx|
-  if (1..9).to_a.include?(music.to_i)    
-    puts "Playing #{my_songs[music.to_i - 1]}" 
-  elsif my_songs.include?(music)   
-    puts "Playing #{music}"
-  else
-    puts "Invalid input, please try again"
+    if (1..9).to_a.include?(music.to_i)    
+      puts "Playing #{my_songs[music.to_i - 1]}" 
+    elsif my_songs.include?(music)   
+      puts "Playing #{music}"
+    else
+      puts "Invalid input, please try again"
+    end
   end
 
 end
