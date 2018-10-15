@@ -33,7 +33,7 @@ end
 
 
 def play(my_songs)
-  binding.pry
+  # binding.pry
   
   puts "Please enter a song name or number: "
   music = gets.chomp
