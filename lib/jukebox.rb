@@ -26,7 +26,7 @@ def play (songs)
   
   if songs.include?(ans)
     puts "Playing #{ans}"
-    system 'open /Users/Omar/Documents/GitHub/jukebox-cli-dumbo-web-102918/audio/Emerald-Park/01.mp3'
+    #system 'open /Users/Omar/Documents/GitHub/jukebox-cli-dumbo-web-102918/audio/Emerald-Park/01.mp3'
     
   
   elsif ans.to_i<=songs.length && ans.to_i != 0
