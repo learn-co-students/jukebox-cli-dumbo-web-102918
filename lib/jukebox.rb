@@ -19,19 +19,19 @@ def help
    exit : exits this program"
  end
  
- def list(songs_arr)
+ def list(songs)
    counter = 1 
-   songs_arr.each do |song|
+   songs.each do |song|
      puts "#{counter}. #{song}"
      counter += 1 
    end
  end
  
- def play(songs_arr)
+ def play(songs)
   binding.pry
    puts "Please enter a song name or number:"
    song_name_num = gets.chomp
-   songs_arr.each do |song|
+   songs.each do |song|
       if song_name_num == song
         puts "Playing #{song}"
     else
