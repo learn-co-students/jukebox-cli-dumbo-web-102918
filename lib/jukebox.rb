@@ -20,23 +20,22 @@ def help
  end
  
  def list(songs)
-   counter = 1 
-   songs.each do |song|
-     puts "#{counter}. #{song}"
-     counter += 1 
+  binding.pry 
+   songs.each_with_index do |song, i|
+
+     puts "#{i + 1}. #{song}"
    end
  end
  
  def play(songs)
-  binding.pry
    puts "Please enter a song name or number:"
    song_name_num = gets.chomp
-   songs.each do |song|
-      if song_name_num == song
-        puts "Playing #{song}"
+      if (1..9).to_a.include?(song_name_num.to_i)
+        puts "Playing #{songs[song_name_num.to_i - 1]}"
+        elsif songs.include?(song_name_num) 
+        puts "Playing #{song_name_num}"
     else
       puts "Invalid input, please try again"
-  end
     end
   end
 
@@ -44,17 +43,24 @@ def exit_jukebox
   puts "Goodbye"
 end
 
-def run 
-  help
+def run(songs) 
+  input = ""
+  while input
   puts "Please enter a command:"
-  user_response = gets.chomp 
-  if user_response == "list"
-    return list
-    elsif user_response = "play"
-    return play
-    elsif user_response = "help"
-    return help
-    elsif user_response = "exit"
-    return exit 
+  input = gets.downcase.strip
+  case input
+  when 'list' 
+    list(songs)
+    when 'play'
+      list(songs)
+      play(songs)
+      when 'help'
+        help
+        when 'exit'
+          exit_jukebox
+          break
+        else
+          help
+      end
   end 
 end
