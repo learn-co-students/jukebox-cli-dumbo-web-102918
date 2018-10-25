@@ -23,6 +23,8 @@ end
 def list (songs)
   songs.each_with_index do |value, index|
     puts "#{index+1}. #{value}"
+  array.each_with_index do |index, value|
+    puts "#{index+1}. #{value}"
   end 
 end
 
@@ -30,7 +32,7 @@ def play (songs)
   puts "Please enter a song name or number:"
   answer = gets.chomp
   #binding.pry
-  if songs.include?(answer) #|| songs.length  => answer
+  if songs.include?(answer) songs.length  => answer
     puts "playing #{answer}"
   elsif songs.length  >= answer.to_i 
         puts "#{answer}. #{songs[answer-1]}"
@@ -43,6 +45,7 @@ def exit_jukebox
   puts "Goodbye"
 end 
 
+
 def run (songs)
   loop do 
   help 
@@ -51,6 +54,12 @@ def run (songs)
   if answer == "exit"
     break 
   else if answer== "list"
+def run
+  help 
+  puts "Please enter a command:"
+  answer = gets.chomp
+  #unless answer == "exit"
+  if answer== "list"
     list(songs)
   elsif answer== "play"
     play(songs)
@@ -64,6 +73,11 @@ exit_jukebox
 end 
 
 play(songs)
+exit_jukebox
+end 
+
+run 
+
 
 
 
