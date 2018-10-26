@@ -45,8 +45,8 @@ end
 
 
 def run (songs)
+  help
   loop do 
-  help 
   puts "Please enter a command:"
   answer = gets.chomp
   if answer == "exit"
@@ -55,12 +55,14 @@ def run (songs)
     list (songs)
   elsif answer== "play"
     play(songs)
+  else puts "invalid command"
+    help
   end 
   end 
   exit_jukebox
 end 
 
-  
+run(songs)
 
 
 
